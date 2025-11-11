@@ -2,7 +2,7 @@
 
 基于[若依vue3版本](https://gitee.com/y_project/RuoYi-Vue)开发，[若依官网地址](http://ruoyi.vip)
 
-- node版本推荐 >= 18.0.0
+- node版本推荐 >=20.19
 - [Vue3](https://v3.cn.vuejs.org) + [Element Plus](https://element-plus.org/zh-CN) + [Vite](https://cn.vitejs.dev)
 - 包管理器推荐使用pnpm
 - eslint + prettier 代码规范
