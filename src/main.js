@@ -21,7 +21,7 @@ import { download } from '@/utils/request';
 
 // svg图标
 import 'virtual:svg-icons-register';
-import SvgIcon from '@/components/SvgIcon';
+import SvgIcon from '@/components/SvgIcon/index.vue';
 import elementIcons from '@/components/SvgIcon/svgicon';
 
 import './permission'; // permission control

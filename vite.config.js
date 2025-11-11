@@ -1,11 +1,11 @@
-import { defineConfig, loadEnv } from 'vite'
-import path from 'path'
-import createVitePlugins from './vite/plugins'
+import { defineConfig, loadEnv } from 'vite';
+import path from 'path';
+import createVitePlugins from './vite/plugins';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode, command }) => {
-  const env = loadEnv(mode, process.cwd())
-  const { VITE_APP_ENV, VITE_APP_BASE_API, VITE_APP_API } = env
+  const env = loadEnv(mode, process.cwd());
+  const { VITE_PORT, VITE_APP_ENV, VITE_APP_BASE_API, VITE_APP_API } = env;
   return {
     // 部署生产环境和开发环境下的URL。
     // 默认情况下，vite 会假设你的应用是被部署在一个域名的根路径上
@@ -18,10 +18,10 @@ export default defineConfig(({ mode, command }) => {
         // 设置路径
         '~': path.resolve(__dirname, './'),
         // 设置别名
-        '@': path.resolve(__dirname, './src')
+        '@': path.resolve(__dirname, './src'),
       },
       // https://cn.vitejs.dev/config/#resolve-extensions
-      extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue']
+      extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue'],
     },
     // 打包配置
     build: {
@@ -34,13 +34,13 @@ export default defineConfig(({ mode, command }) => {
         output: {
           chunkFileNames: 'static/js/[name]-[hash].js',
           entryFileNames: 'static/js/[name]-[hash].js',
-          assetFileNames: 'static/[ext]/[name]-[hash].[ext]'
-        }
-      }
+          assetFileNames: 'static/[ext]/[name]-[hash].[ext]',
+        },
+      },
     },
     // vite 相关配置
     server: {
-      port: 80,
+      port: VITE_PORT || 8080,
       host: true,
       open: true,
       proxy: {
@@ -48,14 +48,14 @@ export default defineConfig(({ mode, command }) => {
         [VITE_APP_BASE_API]: {
           target: VITE_APP_API,
           changeOrigin: true,
-          rewrite: (p) => p.replace(new RegExp('^' + VITE_APP_BASE_API), '')
+          rewrite: p => p.replace(new RegExp('^' + VITE_APP_BASE_API), ''),
         },
-         // springdoc proxy
-         '^/v3/api-docs/(.*)': {
+        // springdoc proxy
+        '^/v3/api-docs/(.*)': {
           target: VITE_APP_API,
           changeOrigin: true,
-        }
-      }
+        },
+      },
     },
     css: {
       postcss: {
@@ -63,15 +63,15 @@ export default defineConfig(({ mode, command }) => {
           {
             postcssPlugin: 'internal:charset-removal',
             AtRule: {
-              charset: (atRule) => {
+              charset: atRule => {
                 if (atRule.name === 'charset') {
-                  atRule.remove()
+                  atRule.remove();
                 }
-              }
-            }
-          }
-        ]
-      }
-    }
-  }
-})
+              },
+            },
+          },
+        ],
+      },
+    },
+  };
+});

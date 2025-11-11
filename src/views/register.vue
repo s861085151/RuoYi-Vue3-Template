@@ -115,7 +115,7 @@ function handleRegister() {
     if (valid) {
       loading.value = true;
       register(registerForm.value)
-        .then(res => {
+        .then(_res => {
           const username = registerForm.value.username;
           ElMessageBox.alert("<font color='red'>恭喜你，您的账号 " + username + ' 注册成功！</font>', '系统提示', {
             dangerouslyUseHTMLString: true,
