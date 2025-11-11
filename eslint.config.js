@@ -59,7 +59,7 @@ export default defineConfig([
       /* 🚀 一般推荐规则 */
       'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
       'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-      'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+      'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
 
       /* 🚀 Vue 项目规则 */
       'vue/multi-word-component-names': 'off', // App.vue / index.vue 不再报错
