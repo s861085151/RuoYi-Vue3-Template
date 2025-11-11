@@ -29,6 +29,10 @@ pnpm dev
 # 前端访问地址 http://localhost:80
 ```
 
+## 环境变量
+
+推荐复制 `.env.development` 到 `.env.development.local` ，文件不提交到git仓库，可以根据个人需求修改。
+
 ## 内置功能
 
 1. 用户管理：用户是系统操作者，该功能主要完成系统用户配置。

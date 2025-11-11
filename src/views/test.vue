@@ -1,11 +1,11 @@
 <template>
   <div class="app-container home">
-    <h1>测试路由页面</h1>
+    <h1 class="text-2xl font-bold text-gray-800">测试路由页面</h1>
     <span class="block text-red-500 mt-2">tailwindcss测试</span>
 
     <p class="text-gray-600 font-bold mt-4">grid</p>
     <div class="grid grid-cols-2 gap-4 mt-2">
-      <div class="bg-gray-200 p-4">
+      <div class="bg-gray-200 p-4 item">
         <p>这是一个网格项</p>
       </div>
       <div class="bg-gray-200 p-4">
@@ -26,8 +26,4 @@ defineOptions({
 });
 </script>
 
-<style scoped lang="scss">
-h1 {
-  color: red;
-}
-</style>
+<style scoped lang="scss"></style>

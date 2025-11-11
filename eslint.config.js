@@ -70,11 +70,8 @@ export default defineConfig([
       'vue/attribute-hyphenation': ['error', 'never'], // template 属性统一 camelCase
       'vue/no-side-effects-in-computed-properties': 'warn', // computed 内有副作用只警告
       'vue/no-dupe-keys': 'warn', // 重复的 prop / data / setup key 只警告
-
       'vue/valid-define-emits': 'warn', // 验证 emits 声明是否正确
-
       'no-useless-escape': 'off', // 关闭无用转义报错
-
       // 'vue/html-indent': ['error', 2],
       // 'vue/script-indent': ['error', 2, { baseIndent: 1 }],
     },
