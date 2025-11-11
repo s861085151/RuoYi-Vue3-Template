@@ -1,0 +1,14 @@
+@import 'tailwindcss';
+
+/* 恢复媒体元素的默认 display/align 行为 */
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: inline;
+  vertical-align: baseline;
+}
